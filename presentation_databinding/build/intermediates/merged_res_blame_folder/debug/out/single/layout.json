@@ -1,6 +1,14 @@
 [
     {
+        "merged": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_list_tree.xml",
+        "source": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/src/main/res/layout/fragment_list_tree.xml"
+    },
+    {
         "merged": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_tree_item_fragment.xml",
         "source": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/src/main/res/layout/fragment_tree_item_fragment.xml"
+    },
+    {
+        "merged": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/tree_item.xml",
+        "source": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/src/main/res/layout/tree_item.xml"
     }
 ]

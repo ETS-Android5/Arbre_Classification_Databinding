@@ -7,6 +7,11 @@
         <entry key="../../../../layout/compose-model-1644576962705.xml" value="0.27870370370370373" />
         <entry key="../../../../layout/compose-model-1644578582898.xml" value="0.27870370370370373" />
         <entry key="app/src/main/res/drawable/ic_height.xml" value="0.1715" />
+        <entry key="presentation_databinding/src/main/res/drawable/border.xml" value="0.1415" />
+        <entry key="presentation_databinding/src/main/res/layout/activity_main.xml" value="0.2015625" />
+        <entry key="presentation_databinding/src/main/res/layout/fragment_list_tree.xml" value="0.1" />
+        <entry key="presentation_databinding/src/main/res/layout/fragment_tree_item_fragment.xml" value="0.165" />
+        <entry key="presentation_databinding/src/main/res/layout/tree_item.xml" value="0.1" />
       </map>
     </option>
   </component>

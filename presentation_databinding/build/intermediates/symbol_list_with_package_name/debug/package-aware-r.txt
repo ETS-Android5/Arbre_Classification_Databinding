@@ -1235,6 +1235,9 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue
+color blueDark
+color blueLight
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1294,6 +1297,10 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color greenForest
+color greenLight
+color greenList
+color green_background
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -1773,6 +1780,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purpleDark
 color purple_200
 color purple_500
 color purple_700
@@ -1797,6 +1805,7 @@ color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
 color white
+color wood
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -2465,6 +2474,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable border
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2534,6 +2544,7 @@ drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable tree
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2635,6 +2646,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
+id buttonTree
 id cache_measures
 id callMeasure
 id cancel_action
@@ -2755,6 +2767,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id info
@@ -2779,6 +2792,7 @@ id line3
 id linear
 id listMode
 id list_item
+id lyTree
 id main_frag
 id masked
 id match_constraint
@@ -2978,6 +2992,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id textWatcher
 id text_input_end_icon
 id text_input_error_icon
@@ -3003,7 +3018,6 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id tree_item_id
 id triangle
 id tvTree
 id unchecked
@@ -3314,6 +3328,7 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
+string menu
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
@@ -3364,6 +3379,7 @@ string selected
 string status_bar_notification_info_overflow
 string tab
 string template_percent
+string tree
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

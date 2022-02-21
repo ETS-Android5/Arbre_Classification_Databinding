@@ -64,11 +64,19 @@
         "source": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/src/main/res/layout/fragment_list_tree.xml"
     },
     {
+        "merged": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/build/intermediates/merged_res/debug/drawable_border.xml.flat",
+        "source": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/src/main/res/drawable/border.xml"
+    },
+    {
         "merged": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
         "merged": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/build/intermediates/merged_res/debug/layout_tree_item.xml.flat",
         "source": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/src/main/res/layout/tree_item.xml"
+    },
+    {
+        "merged": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/build/intermediates/merged_res/debug/drawable_tree.png.flat",
+        "source": "/Users/b.cordier/AndroidStudioProjects/Arbre_Classification_Databinding/presentation_databinding/src/main/res/drawable/tree.png"
     }
 ]

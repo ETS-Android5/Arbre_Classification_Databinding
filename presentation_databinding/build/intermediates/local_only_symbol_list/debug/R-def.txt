@@ -1,17 +1,31 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color blue
+color blueDark
+color blueLight
+color greenForest
+color greenLight
+color greenList
+color green_background
+color purpleDark
 color purple_200
 color purple_500
 color purple_700
 color teal_200
 color teal_700
 color white
+color wood
+drawable border
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable tree
+id buttonTree
+id imageView
+id lyTree
 id main_frag
 id rvTree
-id tree_item_id
+id textView
 id tvTree
 layout activity_main
 layout fragment_list_tree
@@ -21,4 +35,6 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
 string hello_blank_fragment
+string menu
+string tree
 style Theme.Arbre_Classification

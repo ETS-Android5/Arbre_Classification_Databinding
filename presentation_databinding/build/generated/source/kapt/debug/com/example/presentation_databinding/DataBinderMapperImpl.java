@@ -6,7 +6,9 @@ import android.view.View;
 import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.example.presentation_databinding.databinding.FragmentListTreeBindingImpl;
 import com.example.presentation_databinding.databinding.FragmentTreeItemFragmentBindingImpl;
+import com.example.presentation_databinding.databinding.TreeItemBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
 import java.lang.Object;
@@ -18,12 +20,18 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
-  private static final int LAYOUT_FRAGMENTTREEITEMFRAGMENT = 1;
+  private static final int LAYOUT_FRAGMENTLISTTREE = 1;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(1);
+  private static final int LAYOUT_FRAGMENTTREEITEMFRAGMENT = 2;
+
+  private static final int LAYOUT_TREEITEM = 3;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(3);
 
   static {
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.presentation_databinding.R.layout.fragment_list_tree, LAYOUT_FRAGMENTLISTTREE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.presentation_databinding.R.layout.fragment_tree_item_fragment, LAYOUT_FRAGMENTTREEITEMFRAGMENT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.presentation_databinding.R.layout.tree_item, LAYOUT_TREEITEM);
   }
 
   @Override
@@ -35,11 +43,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         throw new RuntimeException("view must have a tag");
       }
       switch(localizedLayoutId) {
+        case  LAYOUT_FRAGMENTLISTTREE: {
+          if ("layout/fragment_list_tree_0".equals(tag)) {
+            return new FragmentListTreeBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_list_tree is invalid. Received: " + tag);
+        }
         case  LAYOUT_FRAGMENTTREEITEMFRAGMENT: {
           if ("layout/fragment_tree_item_fragment_0".equals(tag)) {
             return new FragmentTreeItemFragmentBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_tree_item_fragment is invalid. Received: " + tag);
+        }
+        case  LAYOUT_TREEITEM: {
+          if ("layout/tree_item_0".equals(tag)) {
+            return new TreeItemBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for tree_item is invalid. Received: " + tag);
         }
       }
     }
@@ -86,19 +106,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(2);
+    static final SparseArray<String> sKeys = new SparseArray<String>(4);
 
     static {
       sKeys.put(0, "_all");
-      sKeys.put(1, "treeItem");
+      sKeys.put(1, "main");
+      sKeys.put(2, "treeItem");
+      sKeys.put(3, "vm");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(1);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(3);
 
     static {
+      sKeys.put("layout/fragment_list_tree_0", com.example.presentation_databinding.R.layout.fragment_list_tree);
       sKeys.put("layout/fragment_tree_item_fragment_0", com.example.presentation_databinding.R.layout.fragment_tree_item_fragment);
+      sKeys.put("layout/tree_item_0", com.example.presentation_databinding.R.layout.tree_item);
     }
   }
 }

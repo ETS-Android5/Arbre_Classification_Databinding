@@ -4,12 +4,14 @@ package com.example.presentation_databinding.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.example.presentation_databinding.MainActivity;
 import com.example.presentation_databinding.R;
 import com.example.presentation_databinding.presentation.treeList.TreesListViewModel;
 import java.lang.Deprecated;
@@ -17,15 +19,22 @@ import java.lang.Object;
 
 public abstract class FragmentTreeItemFragmentBinding extends ViewDataBinding {
   @NonNull
-  public final TextView treeItemId;
+  public final ImageView imageView;
+
+  @NonNull
+  public final TextView textView;
 
   @Bindable
   protected TreesListViewModel mTreeItem;
 
+  @Bindable
+  protected MainActivity mMain;
+
   protected FragmentTreeItemFragmentBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, TextView treeItemId) {
+      int _localFieldCount, ImageView imageView, TextView textView) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.treeItemId = treeItemId;
+    this.imageView = imageView;
+    this.textView = textView;
   }
 
   public abstract void setTreeItem(@Nullable TreesListViewModel treeItem);
@@ -33,6 +42,13 @@ public abstract class FragmentTreeItemFragmentBinding extends ViewDataBinding {
   @Nullable
   public TreesListViewModel getTreeItem() {
     return mTreeItem;
+  }
+
+  public abstract void setMain(@Nullable MainActivity main);
+
+  @Nullable
+  public MainActivity getMain() {
+    return mMain;
   }
 
   @NonNull
