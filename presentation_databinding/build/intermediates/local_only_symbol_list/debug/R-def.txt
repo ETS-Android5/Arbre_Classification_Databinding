@@ -24,6 +24,7 @@ id buttonTree
 id imageView
 id lyTree
 id main_frag
+id progressBar
 id rvTree
 id textView
 id tvTree

@@ -1,6 +1,5 @@
 package com.example.presentation_databinding.presentation.treeList
 
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,7 +10,6 @@ import com.example.domain.useCase.treesListUseCase.GetTreesUseCase
 import com.example.domain.util.Resource
 import com.example.presentation_databinding.util.Constants
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -26,14 +24,14 @@ class TreesListViewModel @Inject constructor(
     var state: LiveData<List<Tree>> = _state
 
     //Variables to define UI
-    var isLoading = false
-    var error = mutableStateOf("")
+    var isLoading = MutableLiveData(false)
+    var error = MutableLiveData("")
     var lastTree = false
 
     //Variable used for lazy loading, updated when the user to scroll to the bottom of the list
     private var index = 0
 
-    var select : Tree = mock()
+    var select: Tree = mock()
 
     init {
         getTrees()
@@ -42,24 +40,25 @@ class TreesListViewModel @Inject constructor(
 
     fun getTrees() {
 
-        viewModelScope.launch{
-            isLoading = true
+        viewModelScope.launch {
             getTreesUseCase(index * Constants.NUMBER_OF_ROWS).collect {
                 when (it) {
                     is Resource.Success -> {
-                        lastTree = Constants.NUMBER_OF_ROWS * index >= it.data!!.size
+
                         _state.value = _state.value?.plus(it.data as List<Tree>)
+                        //lastTree = Constants.NUMBER_OF_ROWS * index >= _state.value!!.size
                     }
-                    is Resource.Loading -> isLoading = true
+                    is Resource.Loading -> isLoading.value = true
                     is Resource.Error -> error.value = it.message!!
                 }
             }
-            isLoading = false
+            println(error.value)
+            isLoading.value = false
             index += 1
         }
     }
 
-    fun itemSelection(tree: Tree){
+    fun itemSelection(tree: Tree) {
         select = tree
     }
 }

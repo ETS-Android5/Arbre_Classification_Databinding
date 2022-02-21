@@ -20,7 +20,7 @@ public class FragmentTreeItemFragmentBindingImpl extends FragmentTreeItemFragmen
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     @NonNull
-    private final android.widget.Button mboundView1;
+    private final androidx.appcompat.widget.AppCompatButton mboundView1;
     @NonNull
     private final android.widget.TextView mboundView3;
     @NonNull
@@ -46,7 +46,7 @@ public class FragmentTreeItemFragmentBindingImpl extends FragmentTreeItemFragmen
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView1 = (android.widget.Button) bindings[1];
+        this.mboundView1 = (androidx.appcompat.widget.AppCompatButton) bindings[1];
         this.mboundView1.setTag(null);
         this.mboundView3 = (android.widget.TextView) bindings[3];
         this.mboundView3.setTag(null);

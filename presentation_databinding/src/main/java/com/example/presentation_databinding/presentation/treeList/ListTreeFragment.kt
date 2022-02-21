@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,31 +16,45 @@ import com.example.presentation_databinding.presentation.adapters.TreeAdapter
 
 class ListTreeFragment : Fragment() {
 
-    var treeAdapter2 :TreeAdapter? = null
+    var treeAdapter: TreeAdapter? = null
+    lateinit var act : MainActivity
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
-        val act = (activity as MainActivity)
-        val binding : FragmentListTreeBinding = DataBindingUtil.inflate(
+        act = (activity as MainActivity)
+        val binding: FragmentListTreeBinding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_list_tree,
             container,
-            false)
+            false
+        )
 
         val view: View = binding.root
-        val recyclerView : RecyclerView = binding.rvTree
+        binding.vm = act.vm
+        binding.lifecycleOwner = this
 
-        treeAdapter2 = act.vm.state.value?.let { TreeAdapter( it) }
+        recyclerViewSetUp(act, binding)
+        act.vm.state.observe(viewLifecycleOwner) {
+            treeAdapter?.submitList(it)
+        }
+
+        return view
+    }
+
+    private fun recyclerViewSetUp(act: MainActivity, binding: FragmentListTreeBinding) {
+
+        val recyclerView: RecyclerView = binding.rvTree
+        treeAdapter = act.vm.state.value?.let { TreeAdapter(it) }
         recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = treeAdapter2
+            adapter = treeAdapter
         }
 
-        act.vm.state.observe(viewLifecycleOwner){
-            treeAdapter2?.submitList(it)
-        }
-
-        treeAdapter2?.onItemClick = { tree->
+        treeAdapter?.onItemClick = { tree ->
             act.vm.itemSelection(tree)
             act.onSelectedItem()
         }
@@ -49,12 +62,10 @@ class ListTreeFragment : Fragment() {
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
-                if (!recyclerView.canScrollVertically(1)) {
+                if (!recyclerView.canScrollVertically(1) && !act.vm.lastTree) {
                     act.vm.getTrees()
                 }
             }
         })
-
-        return view
     }
 }
