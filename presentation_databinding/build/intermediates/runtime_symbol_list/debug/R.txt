@@ -3263,6 +3263,7 @@ int string abc_toolbar_collapse_description 0x7f0f001a
 int string androidx_startup 0x7f0f001b
 int string app_name 0x7f0f001c
 int string appbar_scrolling_view_behavior 0x7f0f001d
+int string arbre_n 0x7f0f0093
 int string bottom_sheet_behavior 0x7f0f001e
 int string bottomsheet_action_expand_halfway 0x7f0f001f
 int string character_counter_content_description 0x7f0f0020
@@ -3270,6 +3271,7 @@ int string character_counter_overflowed_content_description 0x7f0f0021
 int string character_counter_pattern 0x7f0f0022
 int string chip_text 0x7f0f0023
 int string clear_text_end_icon_content_description 0x7f0f0024
+int string cliquer_ici_pour_plus_d_infos 0x7f0f0094
 int string close_drawer 0x7f0f0025
 int string close_sheet 0x7f0f0026
 int string default_error_message 0x7f0f0027

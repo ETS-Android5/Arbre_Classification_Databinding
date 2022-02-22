@@ -7,13 +7,12 @@ import com.example.presentation_databinding.presentation.treeItem.TreeItemFragme
 import com.example.presentation_databinding.presentation.treeList.ListTreeFragment
 import com.example.presentation_databinding.presentation.treeList.TreesListViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import com.example.presentation_databinding.databinding.FragmentTreeItemFragmentBinding
 
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    lateinit var vm : TreesListViewModel
+    lateinit var vm: TreesListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,21 +21,21 @@ class MainActivity : AppCompatActivity() {
         vm = ViewModelProvider(this)[TreesListViewModel::class.java]
 
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.main_frag,ListTreeFragment())
+            replace(R.id.main_frag, ListTreeFragment())
             commit()
         }
     }
 
-    fun onSelectedItem(){
+    fun onSelectedItem() {
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.main_frag,TreeItemFragment())
+            replace(R.id.main_frag, TreeItemFragment())
             commit()
         }
     }
 
-    fun backMenu(){
+    fun backMenu() {
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.main_frag,ListTreeFragment())
+            replace(R.id.main_frag, ListTreeFragment())
             commit()
         }
     }

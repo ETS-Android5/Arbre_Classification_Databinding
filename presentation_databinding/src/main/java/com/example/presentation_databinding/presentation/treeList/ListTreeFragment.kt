@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.presentation_databinding.MainActivity
 import com.example.presentation_databinding.R
 import com.example.presentation_databinding.databinding.FragmentListTreeBinding
-import com.example.presentation_databinding.presentation.adapters.TreeAdapter
+import com.example.presentation_databinding.adapters.TreeAdapter
 
 
 class ListTreeFragment : Fragment() {
 
-    var treeAdapter: TreeAdapter? = null
-    lateinit var act : MainActivity
+    private var treeAdapter: TreeAdapter? = null
+    lateinit var act: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,7 +41,6 @@ class ListTreeFragment : Fragment() {
         act.vm.state.observe(viewLifecycleOwner) {
             treeAdapter?.submitList(it)
         }
-
         return view
     }
 
@@ -62,7 +61,7 @@ class ListTreeFragment : Fragment() {
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
-                if (!recyclerView.canScrollVertically(1) && !act.vm.lastTree) {
+                if (!recyclerView.canScrollVertically(1) && !act.vm.lastTree.value!!) {
                     act.vm.getTrees()
                 }
             }

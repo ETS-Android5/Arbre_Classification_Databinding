@@ -35,6 +35,8 @@ layout tree_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string arbre_n
+string cliquer_ici_pour_plus_d_infos
 string hello_blank_fragment
 string menu
 string tree

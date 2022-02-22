@@ -16,12 +16,13 @@ class TreeItemFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         val act = activity as MainActivity
         val binding: FragmentTreeItemFragmentBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_tree_item_fragment, container, false)
         binding.treeItem = act.vm//attach your viewModel to xml
         binding.main = act
         return binding.root
-    }
 
+    }
 }

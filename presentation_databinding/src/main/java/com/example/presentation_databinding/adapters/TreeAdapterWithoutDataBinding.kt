@@ -1,4 +1,4 @@
-package com.example.presentation_databinding.presentation.adapters
+package com.example.presentation_databinding.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -41,16 +41,19 @@ class TreeAdapterWithoutDataBinding internal constructor(context: Context?, data
 
         init {
             itemView.findViewById<Button>(R.id.buttonTree).setOnClickListener {
-                onItemClick?.invoke(mData[adapterPosition])
+                onItemClick?.invoke(mData[absoluteAdapterPosition])
             }
         }
     }
 
+    /*
     fun submitList(newData: List<Tree>) {
         mData.clear()
         mData.addAll(newData)
         notifyDataSetChanged()
     }
+    */
+
 
 
 }

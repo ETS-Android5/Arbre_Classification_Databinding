@@ -1,5 +1,6 @@
-package com.example.presentation_databinding.presentation.adapters
+package com.example.presentation_databinding.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.NonNull
@@ -36,17 +37,13 @@ class TreeAdapter internal constructor(
 
         init {
             treeItemBinding.buttonTree.setOnClickListener {
-                println(adapterPosition.toString())
-                onItemClick?.invoke(mData[adapterPosition])
-            }
-
-            treeItemBinding.tvTree.setOnClickListener {
-                println(adapterPosition.toString())
-                onItemClick?.invoke(mData[adapterPosition])
+                println(absoluteAdapterPosition.toString())
+                onItemClick?.invoke(mData[absoluteAdapterPosition])
             }
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun submitList(newData: List<Tree>) {
         mData.clear()
         mData.addAll(newData)

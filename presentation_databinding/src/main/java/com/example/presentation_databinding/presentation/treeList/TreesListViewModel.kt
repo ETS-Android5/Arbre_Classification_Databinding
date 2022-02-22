@@ -26,11 +26,10 @@ class TreesListViewModel @Inject constructor(
     //Variables to define UI
     var isLoading = MutableLiveData(false)
     var error = MutableLiveData("")
-    var lastTree = false
+    var lastTree = MutableLiveData(false)
 
     //Variable used for lazy loading, updated when the user to scroll to the bottom of the list
     private var index = 0
-
     var select: Tree = mock()
 
     init {
@@ -39,20 +38,17 @@ class TreesListViewModel @Inject constructor(
 
 
     fun getTrees() {
-
         viewModelScope.launch {
             getTreesUseCase(index * Constants.NUMBER_OF_ROWS).collect {
                 when (it) {
                     is Resource.Success -> {
-
                         _state.value = _state.value?.plus(it.data as List<Tree>)
-                        //lastTree = Constants.NUMBER_OF_ROWS * index >= _state.value!!.size
+                        lastTree.value = Constants.NUMBER_OF_ROWS * index > _state.value!!.size
                     }
                     is Resource.Loading -> isLoading.value = true
                     is Resource.Error -> error.value = it.message!!
                 }
             }
-            println(error.value)
             isLoading.value = false
             index += 1
         }
